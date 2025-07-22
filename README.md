@@ -12,31 +12,69 @@ Os arquivos-fonte deste projeto foram feitos em `C` e contêm comentários exten
 
 ---
 
+## Índice
+
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Compilação](#compilação)
+- [Execução](#execução)
+- [Formato do `results.csv`](#formato-do-resultscsv)
+- [Formato dos Arquivos de Dados](#formato-dos-arquivos-de-dados)
+- [Algoritmos de Ordenação](#algoritmos-de-ordenação)
+  - [QuickSort](#quicksort)
+  - [MergeSort](#mergesort)
+  - [HeapSort](#heapsort)
+- [Observações Técnicas](#observações-técnicas)
+- [Manipulação e Análise dos Dados](#manipulação-e-análise-dos-dados)
+  - [Agrupador de Resultados de Testes](#agrupador-de-resultados-de-testes-de-algoritmos-de-ordenação)
+  - [Plot dos Resultados](#plot-dos-resultados)
+    - [Estrutura Esperada](#estrutura-esperada)
+    - [O que o script faz](#o-que-o-script-faz)
+    - [Gráficos Gerados](#gráficos-gerados)
+    - [Como Executar](#como-executar)
+    - [Gráficos](#gráficos)
+    - [Requisitos](#requisitos)
+    - [Observações](#observações)
+- [Autores](#autores)
+- [Referências](#referências)
+
+
 ## Estrutura do Projeto
 
 ```
 sorting_project/
-├── README.md             # Este documento aqui
-├── heapsort.c            # Implementação do algoritmo HeapSort
+├── README.md                     # Este documento aqui
+├── heapsort.c                    # Implementação do algoritmo HeapSort
 ├── heapsort.h
-├── main.c                # Programa principal para teste automatizado
-├── mergesort.c           # Implementação do algoritmo MergeSort
+├── main.c                        # Programa principal para teste automatizado
+├── mergesort.c                   # Implementação do algoritmo MergeSort
 ├── mergesort.h
-├── quicksort.c           # Implementação do algoritmo QuickSort
+├── quicksort.c                   # Implementação do algoritmo QuickSort
 ├── quicksort.h
-├── utils.c               # Funções auxiliares: leitura, tempo, métricas
+├── utils.c                       # Funções auxiliares: leitura, tempo, métricas
 ├── utils.h
-├── backup_data/          # Dados originais e completos para restaurar os testes
-├── data/                 # Conjuntos de dados de entrada
-│   ├── a100.txt          # 100 elementos aleatórios
-│   ├── d100.txt          # 100 elementos decrescentes
-│   ├── o100.txt          # 100 elementos ordenados crescentes
-│   ├── po100.txt         # 100 elementos parcialmente ordenados
-│   └── ...
-└── output/               # Resultados da execução (gerado automaticamente)
-    ├── log.txt           # Resultado do console
-    └── results.csv       # Resultados da execução (gerado automaticamente)
-````
+├── backup_data/                  # Dados originais e completos para restaurar os testes
+├── data/                         # Conjuntos de dados de entrada
+│   ├── a100.txt                  # 100 elementos aleatórios
+│   ├── d100.txt                  # 100 elementos decrescentes
+│   ├── o100.txt                  # 100 elementos ordenados crescentes
+│   ├── po100.txt                 # 100 elementos parcialmente ordenados
+│   └── ...                       # Outros arquivos gerados automaticamente
+├── output/                       # Resultados da execução (gerado automaticamente)
+│   ├── 1_results.csv             # Resultados da execução teste 1
+│   ├── 2_results.csv             # Resultados da execução teste 2
+│   ├── ...                       # Outras rodadas de teste
+│   ├── combined_by_test.csv      # Resultados combinados de todos os testes
+│   ├── metrics_filtered_with_std.csv  # Métricas com média e desvio padrão
+│   └── log.txt                   # Resultado do console
+├── graphs/                       # Gráficos gerados com matplotlib/seaborn
+│   ├── quicksort_tempo_por_tipo_dado.png
+│   ├── mergesort_tempo_com_std_por_tipo_dado.png
+│   ├── tempo_comparativo_por_algoritmo_random.png
+│   └── ...                       # Outros gráficos para cada algoritmo e tipo de dados
+└── analyses/                     # Scripts Python para análise estatística e visualização
+    ├── group_files.py           # Script para agrupar arquivos CSV por rodada de teste
+    └── group_and_graph.py       # Script para gerar métricas e gráficos automaticamente
+```
 
 ---
 
@@ -253,6 +291,82 @@ Certifique-se de que a pasta `../output/` contenha os arquivos `N_results.csv`.
 
 ---
 
+## Plot dos resultados
+
+### Análise Experimental de Algoritmos de Ordenação - Geração de Gráficos
+
+Este script realiza a análise estatística e visualização gráfica dos resultados de experimentos com algoritmos de ordenação (`QuickSort`, `MergeSort` e `HeapSort`) aplicados a diferentes tipos de conjuntos de dados.
+
+### Estrutura Esperada
+
+O arquivo de entrada `combined_by_test.csv` deve estar na pasta `../output/` e conter os resultados brutos de **7 execuções por teste**, incluindo:
+
+- Nome do arquivo (`Filename`)
+- Algoritmo (`Algorithm`)
+- Tipo de dados (`DataType`)
+- Tamanho do vetor (`Size`)
+- Tempo de execução (`TimeSeconds`)
+- Número de comparações (`Comparisons`)
+- Uso de memória (`MemoryBytes`)
+
+### O que o script faz
+
+1. **Remove o melhor e o pior tempo de execução por grupo** (`Filename`, `Algorithm`);
+2. **Calcula média e desvio padrão** de tempo, comparações e memória para os 5 testes restantes;
+3. **Salva os dados agregados** em um novo arquivo:  
+   `../output/metrics_filtered_with_std.csv`;
+4. **Gera múltiplos gráficos**, salvos na pasta `graphs/`:
+
+#### Gráficos Gerados
+
+1. **Para cada algoritmo**:
+   - Tempo médio por tipo de dados (`tempo_por_tipo_dado`)
+   - Tempo médio com desvio padrão (`tempo_com_std_por_tipo_dado`)
+
+2. **Para cada tipo de dados**:
+   - Comparação entre algoritmos com barras de erro (`tempo_comparativo_por_algoritmo_<tipo>.png`)
+
+---
+
+### Como executar
+
+1. Garanta que o arquivo `combined_by_test.csv` esteja presente em `../output/`.
+2. Execute o script Python:
+
+```bash
+python nome_do_script.py
+````
+
+3. Verifique a pasta `graphs/` para os arquivos PNG com os gráficos.
+
+---
+
+### Gráficos
+
+* `quicksort_tempo_por_tipo_dado.png`
+* `mergesort_tempo_com_std_por_tipo_dado.png`
+* `tempo_comparativo_por_algoritmo_random.png`
+
+---
+
+### Requisitos
+
+* Python 3.10+
+* Pacotes:
+
+```bash
+pip install pandas matplotlib seaborn
+```
+
+---
+
+### Observações
+
+* As análises removem os outliers (melhor e pior tempo).
+* Os gráficos ajudam a visualizar como cada algoritmo se comporta diante de diferentes cenários de entrada.
+* A mesma lógica pode ser estendida para gráficos de **comparações** e **uso de memória**.
+
+---
 
 
 ## Autores
