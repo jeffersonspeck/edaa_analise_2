@@ -1,4 +1,12 @@
-Este projeto realiza a comparação de desempenho dos algoritmos **QuickSort**, **MergeSort** e **HeapSort** aplicados a diferentes conjuntos de dados de entrada. São coletadas métricas de tempo de execução, número de comparações e uso estimado de memória dinâmica. Os resultados são salvos em um arquivo `resultados.csv`.
+# Análise Experimental de Algoritmos de Ordenação \(O(n \log n)\)
+
+Este projeto realiza a **análise empírica comparativa** dos algoritmos de ordenação **QuickSort**, **MergeSort** e **HeapSort**, aplicados a diferentes conjuntos de dados de entrada. São coletadas métricas como:
+
+- Tempo de execução
+- Número de comparações realizadas
+- Uso estimado de memória dinâmica
+
+Os resultados são exibidos no terminal e também exportados para o arquivo `resultados.csv`.
 
 ---
 
@@ -7,17 +15,18 @@ Este projeto realiza a comparação de desempenho dos algoritmos **QuickSort**, 
 ```
 
 sorting\_project/
-├── main.c                # Programa principal
-├── quicksort.c/.h        # Algoritmo QuickSort
-├── mergesort.c/.h        # Algoritmo MergeSort
-├── heapsort.c/.h         # Algoritmo HeapSort
-├── utils.c/.h            # Utilitários: carregamento de dados, tempo, métricas
-├── resultados.csv        # (Gerado na execução) Resultados em formato CSV
-└── dados/
-├── aleatorio.txt
-├── ordenado.txt
-├── parcial.txt
-└── decrescente.txt
+├── main.c                # Programa principal para teste automatizado
+├── quicksort.c/.h        # Implementação algoritmo QuickSort
+├── mergesort.c/.h        # Implementação algoritmo MergeSort
+├── heapsort.c/.h         # Implementação algoritmo HeapSort
+├── utils.c/.h            # Funções auxiliares: leitura, tempo, métricas
+├── resultados.csv        # Resultados da execução (gerado automaticamente)
+└── data/                 # Conjuntos de dados de entrada
+    ├── a100.txt          # 100 elementos aleatórios
+    ├── o100.txt          # 100 elementos ordenados crescentes
+    ├── d100.txt          # 100 elementos decrescentes
+    ├── po100.txt         # 100 elementos parcialmente ordenados
+    └── ...
 
 ````
 
@@ -25,7 +34,7 @@ sorting\_project/
 
 ## Compilação
 
-No terminal (Linux/Mac/WSL):
+No terminal (Linux, macOS ou WSL):
 
 ```bash
 gcc -o ordenacao main.c quicksort.c mergesort.c heapsort.c utils.c -Wall
@@ -35,7 +44,7 @@ gcc -o ordenacao main.c quicksort.c mergesort.c heapsort.c utils.c -Wall
 
 ## Execução
 
-Execute o programa com:
+Após compilar, execute o programa com:
 
 ```bash
 ./ordenacao
@@ -43,35 +52,38 @@ Execute o programa com:
 
 O programa irá:
 
-* Carregar os arquivos de entrada da pasta `dados/`
-* Executar os 3 algoritmos sobre cada conjunto
-* Medir o tempo, número de comparações e uso de memória
-* Exibir os resultados no terminal
-* Registrar os resultados em `resultados.csv`
+1. Varrer automaticamente a pasta `data/` em busca de arquivos `.txt`;
+2. Inferir o tipo de dado (aleatório, ordenado, decrescente, etc.) com base no prefixo do nome do arquivo (`a`, `o`, `d`, `po`);
+3. Extrair o número de elementos do nome do arquivo (ex: `a500.txt` = 500 elementos);
+4. Executar **QuickSort**, **MergeSort** e **HeapSort** sobre cada vetor;
+5. Medir o tempo, contagem de comparações e uso de memória;
+6. Registrar os dados no terminal e no arquivo `resultados.csv`.
 
 ---
 
 ## Formato do `resultados.csv`
 
-Após a execução, o arquivo conterá linhas como:
+Exemplo de conteúdo:
 
 ```
-TipoEntrada,Algoritmo,TempoSegundos,Comparacoes,MemoriaBytes
-Aleatório,QuickSort,0.000523,17,0
-Aleatório,MergeSort,0.000673,23,80
+Arquivo,TipoEntrada,Tamanho,Algoritmo,TempoSegundos,Comparacoes,MemoriaBytes
+a100.txt,Aleatório,100,QuickSort,0.000007,142,0
+a100.txt,Aleatório,100,MergeSort,0.000017,157,800
+a100.txt,Aleatório,100,HeapSort,0.000011,198,0
 ...
 ```
 
-Você pode abrir este arquivo em planilhas (Excel, LibreOffice, Google Sheets) ou usar Python/R para gerar gráficos.
+Este arquivo pode ser aberto em Excel, Google Sheets, LibreOffice ou analisado por scripts em Python, R, etc.
 
 ---
 
 ## Formato dos Arquivos de Dados
 
-Cada arquivo da pasta `dados/` deve começar com um número inteiro que indica a quantidade de elementos, seguido pelos elementos (um por linha). Exemplo (`aleatorio.txt`):
+Os arquivos na pasta `data/` devem conter **apenas números inteiros, um por linha**, sem cabeçalho.
+
+Exemplo (`a100.txt`):
 
 ```
-10
 34
 7
 23
@@ -82,24 +94,55 @@ Cada arquivo da pasta `dados/` deve começar com um número inteiro que indica a
 90
 18
 45
+...
 ```
 
----
-
-## Conjuntos de Entrada Usados
-
-* `aleatorio.txt`: elementos aleatórios
-* `ordenado.txt`: elementos já em ordem crescente
-* `parcial.txt`: mistura de ordenados e fora de ordem
-* `decrescente.txt`: elementos em ordem decrescente
+O programa determina automaticamente o tamanho do vetor com base no nome do arquivo (`a100.txt` → 100 números aleatórios lidos).
 
 ---
 
-## Observações
+## Algoritmos de Ordenação
 
-* O código é modular e facilmente extensível para outros algoritmos ou métricas.
-* Os algoritmos foram instrumentados para contar comparações e alocações de memória (quando aplicável).
-* `MergeSort` é o único que usa `malloc` para dividir vetores; os demais operam in-place.
+### QuickSort
+
+O QuickSort é um algoritmo recursivo que utiliza a técnica de **divisão e conquista**. Em cada passo, escolhe um **pivô** (neste projeto, o último elemento) e particiona o vetor em duas partes: à esquerda, elementos menores; à direita, elementos maiores.
+
+* **Melhor caso**: O(n log n) → pivô sempre divide o vetor ao meio.
+* **Pior caso**: O(n²) → vetor já ordenado ou decrescente (pivô mal escolhido).
+* **Médio**: O(n log n)
+* **Memória**: In-place (uso mínimo)
+
+---
+
+### MergeSort
+
+O MergeSort é um algoritmo **estável**, baseado em divisão e conquista. Divide o vetor recursivamente em metades e depois realiza a **intercalação ordenada**.
+
+* **Melhor caso**: O(n log n)
+* **Pior caso**: O(n log n)
+* **Médio**: O(n log n)
+* **Memória**: O(n) extra (vetores auxiliares)
+
+---
+
+### HeapSort
+
+O HeapSort transforma o vetor em uma **árvore heap (máx-heap)** e, em seguida, extrai o maior elemento repetidamente, reorganizando o heap a cada passo.
+
+* **Melhor caso**: O(n log n)
+* **Pior caso**: O(n log n)
+* **Médio**: O(n log n)
+* **Memória**: In-place
+
+---
+
+## Observações Técnicas
+
+* Todos os algoritmos foram instrumentados para contar o número de **comparações** realizadas.
+* A variável `memoria` registra o uso estimado com `malloc` e `realloc`.
+* O projeto é modular, permitindo fácil extensão com outros algoritmos.
+* O QuickSort pode ser melhorado com pivô aleatório ou mediana de três (não implementado aqui).
+* Vetores com até 10⁵ elementos são viáveis de testar sem otimizações adicionais.
 
 ---
 
@@ -108,5 +151,11 @@ Cada arquivo da pasta `dados/` deve começar com um número inteiro que indica a
 * Edinéia dos Santos Brizola Brum
 * Jefferson Rodrigo Speck
 * Rafael Ferreira Lima
+
+---
+
+## Referências
+
+* Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2002). Algoritmos: Teoria e Prática (2ª ed., tradução da 2ª ed. americana). Rio de Janeiro: Campus.
 
 ---
