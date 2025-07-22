@@ -1,4 +1,4 @@
-# Análise Experimental de Algoritmos de Ordenação \(O(n \log n)\)
+# Análise Experimental de Algoritmos de Ordenação `O(n log₂ n)`
 
 Este projeto realiza a **análise empírica comparativa** dos algoritmos de ordenação **QuickSort**, **MergeSort** e **HeapSort**, aplicados a diferentes conjuntos de dados de entrada. São coletadas métricas como:
 
@@ -6,7 +6,7 @@ Este projeto realiza a **análise empírica comparativa** dos algoritmos de orde
 - Número de comparações realizadas
 - Uso estimado de memória dinâmica
 
-Os resultados são exibidos no terminal e também exportados para o arquivo `resultados.csv`.
+Os resultados são exibidos no terminal e também exportados para o arquivo `results.csv`.
 
 ---
 
