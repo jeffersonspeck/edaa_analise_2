@@ -9,7 +9,7 @@ Este projeto realiza a comparação de desempenho dos algoritmos **QuickSort**, 
 
 ---
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 
@@ -30,7 +30,7 @@ sorting\_project/
 
 ---
 
-## 🚀 Compilação
+## Compilação
 
 No terminal (Linux/Mac/WSL):
 
@@ -40,7 +40,7 @@ gcc -o ordenacao main.c quicksort.c mergesort.c heapsort.c utils.c -Wall
 
 ---
 
-## ▶️ Execução
+## Execução
 
 Execute o programa com:
 
@@ -58,7 +58,7 @@ O programa irá:
 
 ---
 
-## 📊 Formato do `resultados.csv`
+## Formato do `resultados.csv`
 
 Após a execução, o arquivo conterá linhas como:
 
@@ -73,7 +73,7 @@ Você pode abrir este arquivo em planilhas (Excel, LibreOffice, Google Sheets) o
 
 ---
 
-## 📥 Formato dos Arquivos de Dados
+## Formato dos Arquivos de Dados
 
 Cada arquivo da pasta `dados/` deve começar com um número inteiro que indica a quantidade de elementos, seguido pelos elementos (um por linha). Exemplo (`aleatorio.txt`):
 
@@ -93,7 +93,7 @@ Cada arquivo da pasta `dados/` deve começar com um número inteiro que indica a
 
 ---
 
-## 🧪 Conjuntos de Entrada Usados
+## Conjuntos de Entrada Usados
 
 * `aleatorio.txt`: elementos aleatórios
 * `ordenado.txt`: elementos já em ordem crescente
@@ -102,7 +102,7 @@ Cada arquivo da pasta `dados/` deve começar com um número inteiro que indica a
 
 ---
 
-## 📌 Observações
+## Observações
 
 * O código é modular e facilmente extensível para outros algoritmos ou métricas.
 * Os algoritmos foram instrumentados para contar comparações e alocações de memória (quando aplicável).
@@ -110,7 +110,7 @@ Cada arquivo da pasta `dados/` deve começar com um número inteiro que indica a
 
 ---
 
-## 👨‍💻 Autores
+## Autores
 
 * Edinéia dos Santos Brizola Brum
 * Jefferson Rodrigo Speck
