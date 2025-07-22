@@ -1,0 +1,25 @@
+Filename,DataType,Size,Algorithm,TimeSeconds,Comparisons,MemoryBytes
+a100.txt,Random,100,QuickSort,0.000007,715,0
+a100.txt,Random,100,MergeSort,0.000014,537,2688
+a100.txt,Random,100,HeapSort,0.000010,1029,0
+a200.txt,Random,200,QuickSort,0.000014,1455,0
+a200.txt,Random,200,MergeSort,0.000021,1283,6176
+a200.txt,Random,200,HeapSort,0.000021,2436,0
+d100.txt,Descending,100,QuickSort,0.000017,4950,0
+d100.txt,Descending,100,MergeSort,0.000008,316,2688
+d100.txt,Descending,100,HeapSort,0.000008,944,0
+d200.txt,Descending,200,QuickSort,0.000069,19793,0
+d200.txt,Descending,200,MergeSort,0.000014,734,6176
+d200.txt,Descending,200,HeapSort,0.000018,2275,0
+o100.txt,Sorted,100,QuickSort,0.000023,4905,0
+o100.txt,Sorted,100,MergeSort,0.000007,356,2688
+o100.txt,Sorted,100,HeapSort,0.000009,1085,0
+o200.txt,Sorted,200,QuickSort,0.000086,19900,0
+o200.txt,Sorted,200,MergeSort,0.000013,812,6176
+o200.txt,Sorted,200,HeapSort,0.000019,2587,0
+po100.txt,Partially Ordered,100,QuickSort,0.000007,835,0
+po100.txt,Partially Ordered,100,MergeSort,0.000010,536,2688
+po100.txt,Partially Ordered,100,HeapSort,0.000011,1067,0
+po200.txt,Partially Ordered,200,QuickSort,0.000014,2134,0
+po200.txt,Partially Ordered,200,MergeSort,0.000020,1205,6176
+po200.txt,Partially Ordered,200,HeapSort,0.000022,2547,0
