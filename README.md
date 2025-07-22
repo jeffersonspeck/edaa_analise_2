@@ -160,6 +160,101 @@ O HeapSort transforma o vetor em uma **árvore heap (máx-heap)** e, em seguida,
 
 ---
 
+# Manipulação e Analise dos Dados
+
+Aqui está um `README.md` explicando claramente a finalidade, funcionamento e instruções de uso do código fornecido:
+
+---
+
+##  Agrupador de Resultados de Testes de Algoritmos de Ordenação
+
+Este script Python tem como objetivo **agrupar e consolidar os resultados de múltiplos testes de desempenho de algoritmos de ordenação** (como QuickSort, MergeSort e HeapSort), que foram previamente salvos em arquivos `.csv` separados. Ele é útil para organizar os dados experimentais e facilitar análises estatísticas posteriores em Python, Excel, R ou outras ferramentas.
+
+---
+
+### Funcionalidade
+
+O script realiza as seguintes etapas:
+
+1. **Procura por arquivos CSV** com nomes no formato `N_results.csv` (onde `N` é o número do teste) dentro da pasta `../output`.
+2. **Ordena os arquivos** com base no número do teste (por exemplo: `1_results.csv`, `2_results.csv`, ...).
+3. **Lê cada arquivo** e insere uma nova coluna chamada `Test`, indicando de qual rodada de teste aquele conjunto de resultados pertence.
+4. **Agrupa todos os arquivos lidos** em um único DataFrame pandas.
+5. **Salva o resultado consolidado** no arquivo `combined_by_test.csv` dentro da pasta `../output/`.
+
+---
+
+### Estrutura Esperada
+
+```
+project_root/
+├── analyses/
+│   └── group_files.py       ← Este script
+├── output/
+│   ├── 1_results.csv
+│   ├── 2_results.csv
+│   ├── ...
+│   └── combined_by_test.csv ← Gerado automaticamente
+```
+
+---
+
+### Exemplo de Entrada
+
+Cada arquivo como `1_results.csv` deve conter colunas como:
+
+```
+Filename,DataType,Size,Algorithm,TimeSeconds,Comparisons,MemoryBytes
+a100.txt,Random,100,QuickSort,0.000007,53,0
+...
+```
+
+---
+
+### Exemplo de Saída (`combined_by_test.csv`)
+
+```csv
+Test,Filename,DataType,Size,Algorithm,TimeSeconds,Comparisons,MemoryBytes
+1,a100.txt,Random,100,QuickSort,0.000007,53,0
+1,a100.txt,Random,100,MergeSort,0.000008,66,800
+1,a100.txt,Random,100,HeapSort,0.000009,61,0
+2,a100.txt,Random,100,QuickSort,0.000006,48,0
+...
+```
+
+---
+
+### Como Executar
+
+A partir da pasta onde está o script:
+
+```bash
+python group_files.py
+```
+
+Certifique-se de que a pasta `../output/` contenha os arquivos `N_results.csv`.
+
+---
+
+### Requisitos
+
+* Python 3.x
+* Bibliotecas:
+
+  * `pandas` (instale com `pip install pandas`)
+
+---
+
+###  Observações
+
+* O script não utiliza bibliotecas externas além do `pandas`.
+* A nomenclatura dos arquivos deve seguir exatamente o padrão `N_results.csv`.
+* O número `N` é usado para gerar a coluna `Test` no CSV final.
+
+---
+
+
+
 ## Autores
 
 * Edinéia dos Santos Brizola Brum
