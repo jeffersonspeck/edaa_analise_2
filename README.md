@@ -58,7 +58,7 @@ sorting_project/
 │   ├── d100.txt                  # 100 elementos decrescentes
 │   ├── o100.txt                  # 100 elementos ordenados crescentes
 │   ├── po100.txt                 # 100 elementos parcialmente ordenados
-│   └── ...                       # Outros arquivos gerados automaticamente
+│   └── ...                       # Outros arquivos gerados para testes
 ├── output/                       # Resultados da execução (gerado automaticamente)
 │   ├── 1_results.csv             # Resultados da execução teste 1
 │   ├── 2_results.csv             # Resultados da execução teste 2
