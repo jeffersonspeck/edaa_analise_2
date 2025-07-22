@@ -13,21 +13,27 @@ Os resultados são exibidos no terminal e também exportados para o arquivo `res
 ## Estrutura do Projeto
 
 ```
-
-sorting\_project/
+sorting_project/
+├── README.md             # Este documento aqui
+├── heapsort.c            # Implementação do algoritmo HeapSort
+├── heapsort.h
 ├── main.c                # Programa principal para teste automatizado
-├── quicksort.c/.h        # Implementação algoritmo QuickSort
-├── mergesort.c/.h        # Implementação algoritmo MergeSort
-├── heapsort.c/.h         # Implementação algoritmo HeapSort
-├── utils.c/.h            # Funções auxiliares: leitura, tempo, métricas
-├── resultados.csv        # Resultados da execução (gerado automaticamente)
-└── data/                 # Conjuntos de dados de entrada
-    ├── a100.txt          # 100 elementos aleatórios
-    ├── o100.txt          # 100 elementos ordenados crescentes
-    ├── d100.txt          # 100 elementos decrescentes
-    ├── po100.txt         # 100 elementos parcialmente ordenados
-    └── ...
-
+├── mergesort.c           # Implementação do algoritmo MergeSort
+├── mergesort.h
+├── quicksort.c           # Implementação do algoritmo QuickSort
+├── quicksort.h
+├── utils.c               # Funções auxiliares: leitura, tempo, métricas
+├── utils.h
+├── backup_data/          # Dados originais e completos para restaurar os testes
+├── data/                 # Conjuntos de dados de entrada
+│   ├── a100.txt          # 100 elementos aleatórios
+│   ├── d100.txt          # 100 elementos decrescentes
+│   ├── o100.txt          # 100 elementos ordenados crescentes
+│   ├── po100.txt         # 100 elementos parcialmente ordenados
+│   └── ...
+└── output/               # Resultados da execução (gerado automaticamente)
+    ├── log.txt           # Resultado do console
+    └── results.csv       # Resultados da execução (gerado automaticamente)
 ````
 
 ---
@@ -37,7 +43,7 @@ sorting\_project/
 No terminal (Linux, macOS ou WSL):
 
 ```bash
-gcc -o ordenacao main.c quicksort.c mergesort.c heapsort.c utils.c -Wall
+gcc -o sort_analysis main.c quicksort.c mergesort.c heapsort.c utils.c -Wall
 ````
 
 ---
@@ -47,7 +53,13 @@ gcc -o ordenacao main.c quicksort.c mergesort.c heapsort.c utils.c -Wall
 Após compilar, execute o programa com:
 
 ```bash
-./ordenacao
+./sort_analysis
+```
+
+Se quiser salvar o log do console, basta utilizar o `tee` (necessário instalar):
+
+```bash
+./sort_analysis | tee output/log.txt
 ```
 
 O programa irá:
@@ -57,19 +69,19 @@ O programa irá:
 3. Extrair o número de elementos do nome do arquivo (ex: `a500.txt` = 500 elementos);
 4. Executar **QuickSort**, **MergeSort** e **HeapSort** sobre cada vetor;
 5. Medir o tempo, contagem de comparações e uso de memória;
-6. Registrar os dados no terminal e no arquivo `resultados.csv`.
+6. Registrar os dados no terminal e no arquivo `output/results.csv`.
 
 ---
 
-## Formato do `resultados.csv`
+## Formato do `results.csv`
 
 Exemplo de conteúdo:
 
 ```
-Arquivo,TipoEntrada,Tamanho,Algoritmo,TempoSegundos,Comparacoes,MemoriaBytes
-a100.txt,Aleatório,100,QuickSort,0.000007,142,0
-a100.txt,Aleatório,100,MergeSort,0.000017,157,800
-a100.txt,Aleatório,100,HeapSort,0.000011,198,0
+Filename,DataType,Size,Algorithm,TimeSeconds,Comparisons,MemoryBytes
+a100.txt,Random,100,QuickSort,0.000007,142,0
+a100.txt,Random,100,MergeSort,0.000017,157,800
+a100.txt,Random,100,HeapSort,0.000011,198,0
 ...
 ```
 
