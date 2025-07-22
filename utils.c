@@ -1,3 +1,50 @@
+/*
+[PT-BR]
+------------------------------------------------------------
+Funções utilitárias para suporte à análise de algoritmos de ordenação.
+
+Este módulo contém funções auxiliares utilizadas pelo programa principal:
+- Medição de tempo de execução dos algoritmos (`tempo_execucao`)
+- Leitura de dados a partir de arquivos (`carregar_dados`)
+- Escrita opcional de vetores ordenados em arquivos (`salvar_saida`)
+- Controle e reinicialização de métricas globais:
+  - `comparacoes`: número de comparações entre elementos
+  - `memoria`: quantidade estimada de memória alocada (bytes)
+
+Observações:
+- A função `carregar_dados` está adaptada para arquivos que iniciam com
+  um inteiro representando o tamanho do vetor seguido pelos elementos.
+- A contagem de memória considera apenas a alocação via `malloc`.
+
+Uso típico:
+- As métricas são resetadas antes de cada execução de algoritmo.
+- A função `tempo_execucao` executa o algoritmo e retorna a duração em segundos.
+
+------------------------------------------------------------
+
+[EN]
+------------------------------------------------------------
+Utility functions for supporting the analysis of sorting algorithms.
+
+This module provides helper functions used by the main program:
+- Measuring execution time of sorting algorithms (`tempo_execucao`)
+- Reading input data from files (`carregar_dados`)
+- Optional saving of sorted arrays to files (`salvar_saida`)
+- Control and reset of global metrics:
+  - `comparacoes`: number of element comparisons
+  - `memoria`: estimated memory usage (in bytes)
+
+Notes:
+- The `carregar_dados` function expects files to begin with an integer
+  indicating the array size, followed by the elements.
+- Memory count considers only memory allocated via `malloc`.
+
+Typical usage:
+- Metrics are reset before each algorithm execution.
+- `tempo_execucao` runs the sorting function and returns elapsed time in seconds.
+
+------------------------------------------------------------
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>

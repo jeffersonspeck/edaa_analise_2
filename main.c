@@ -1,3 +1,60 @@
+/*
+[PT-BR]
+------------------------------------------------------------
+Programa principal para análise experimental de algoritmos de ordenação.
+
+Este programa automatiza a execução e medição de desempenho dos algoritmos:
+- QuickSort
+- MergeSort
+- HeapSort
+
+Fluxo geral:
+1. Percorre automaticamente a pasta `data/` procurando arquivos de entrada.
+2. Identifica o tipo de dados (aleatório, ordenado, etc.) pelo prefixo do nome do arquivo.
+3. Extrai a quantidade de elementos a partir do nome do arquivo (ex: a500.txt → 500).
+4. Carrega os dados do arquivo e executa cada algoritmo de ordenação.
+5. Mede o tempo de execução, número de comparações e uso de memória dinâmica.
+6. Grava os resultados no terminal e no arquivo `output/results.csv`.
+
+Formato do CSV:
+- Filename, DataType, Size, Algorithm, TimeSeconds, Comparisons, MemoryBytes
+
+Dependências:
+- Funções auxiliares em `utils.c` para tempo e métricas
+- Algoritmos implementados separadamente em seus respectivos arquivos
+
+Observação:
+- O diretório `output/` deve existir antes da execução
+------------------------------------------------------------
+
+[EN]
+------------------------------------------------------------
+Main program for experimental analysis of sorting algorithms.
+
+This program automates the execution and performance measurement of:
+- QuickSort
+- MergeSort
+- HeapSort
+
+General flow:
+1. Automatically scans the `data/` folder for input files.
+2. Identifies data type (random, sorted, etc.) from the filename prefix.
+3. Extracts the number of elements from the filename (e.g., a500.txt → 500).
+4. Loads input data and executes each sorting algorithm.
+5. Measures execution time, number of comparisons, and dynamic memory usage.
+6. Logs results to the console and to the `output/results.csv` file.
+
+CSV Format:
+- Filename, DataType, Size, Algorithm, TimeSeconds, Comparisons, MemoryBytes
+
+Dependencies:
+- Auxiliary functions in `utils.c` for timing and metrics
+- Sorting algorithms implemented in separate modules
+
+Note:
+- The `output/` directory must exist prior to execution
+------------------------------------------------------------
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

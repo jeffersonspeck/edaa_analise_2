@@ -8,6 +8,8 @@ Este projeto realiza a **análise empírica comparativa** dos algoritmos de orde
 
 Os resultados são exibidos no terminal e também exportados para o arquivo `results.csv`.
 
+Os arquivos-fonte deste projeto foram feitos em `C` e contêm comentários extensos em português e inglês com o objetivo de documentar detalhadamente o funcionamento de cada algoritmo, suas métricas e complexidade. Esses blocos de comentários podem ser livremente removidos ou reduzidos caso deseje um código mais limpo ou enxuto para entrega ou execução prática.
+
 ---
 
 ## Estrutura do Projeto
