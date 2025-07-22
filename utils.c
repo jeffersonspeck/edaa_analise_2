@@ -3,6 +3,14 @@
 #include <time.h>
 #include "utils.h"
 
+long comparacoes = 0;
+long memoria = 0;
+
+void resetar_metricas() {
+    comparacoes = 0;
+    memoria = 0;
+}
+
 int* carregar_dados(const char* filename, int* tamanho) {
     FILE* file = fopen(filename, "r");
     if (!file) {
@@ -12,6 +20,7 @@ int* carregar_dados(const char* filename, int* tamanho) {
 
     fscanf(file, "%d", tamanho);
     int* arr = malloc((*tamanho) * sizeof(int));
+    memoria += (*tamanho) * sizeof(int);
 
     for (int i = 0; i < *tamanho; i++) {
         fscanf(file, "%d", &arr[i]);
@@ -34,12 +43,4 @@ double tempo_execucao(void (*sort_func)(int[], int), int arr[], int n) {
     sort_func(arr, n);
     clock_t fim = clock();
     return ((double)(fim - inicio)) / CLOCKS_PER_SEC;
-}
-
-long comparacoes = 0;
-long memoria = 0;
-
-void resetar_metricas() {
-    comparacoes = 0;
-    memoria = 0;
 }

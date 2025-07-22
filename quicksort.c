@@ -1,4 +1,5 @@
 #include "quicksort.h"
+#include "utils.h"
 
 void swap(int *a, int *b) {
     int t = *a;
@@ -11,6 +12,7 @@ int partition(int arr[], int low, int high) {
     int i = low - 1;
 
     for (int j = low; j < high; j++) {
+        comparacoes++;
         if (arr[j] < pivot) {
             i++;
             swap(&arr[i], &arr[j]);

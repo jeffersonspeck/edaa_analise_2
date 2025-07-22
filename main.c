@@ -19,6 +19,9 @@ int main() {
 
     const char* nomes[] = { "Aleatório", "Ordenado", "Parcialmente Ordenado", "Decrescente" };
 
+    FILE* csv = fopen("resultados.csv", "w");
+    fprintf(csv, "TipoEntrada,Algoritmo,TempoSegundos,Comparacoes,MemoriaBytes\n");
+
     for (int i = 0; i < 4; i++) {
         int n;
         int* dados1 = carregar_dados(arquivos[i], &n);
@@ -27,9 +30,17 @@ int main() {
         memcpy(dados2, dados1, n * sizeof(int));
         memcpy(dados3, dados1, n * sizeof(int));
 
+        resetar_metricas();
         double tq = tempo_execucao(wrapper_quick, dados1, n);
+        fprintf(csv, "%s,QuickSort,%.6f,%ld,%ld\n", nomes[i], tq, comparacoes, memoria);
+
+        resetar_metricas();
         double tm = tempo_execucao(wrapper_merge, dados2, n);
+        fprintf(csv, "%s,MergeSort,%.6f,%ld,%ld\n", nomes[i], tm, comparacoes, memoria);
+
+        resetar_metricas();
         double th = tempo_execucao(heapsort, dados3, n);
+        fprintf(csv, "%s,HeapSort,%.6f,%ld,%ld\n", nomes[i], th, comparacoes, memoria);
 
         printf("\nConjunto: %s (n = %d)\n", nomes[i], n);
         printf("QuickSort:  %.6f s\n", tq);
@@ -39,5 +50,6 @@ int main() {
         free(dados1); free(dados2); free(dados3);
     }
 
+    fclose(csv);
     return 0;
 }

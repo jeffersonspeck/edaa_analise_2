@@ -1,0 +1,13 @@
+TipoEntrada,Algoritmo,TempoSegundos,Comparacoes,MemoriaBytes
+Aleatório,QuickSort,0.000001,21,0
+Aleatório,MergeSort,0.000002,22,136
+Aleatório,HeapSort,0.000001,38,0
+Ordenado,QuickSort,0.000001,45,0
+Ordenado,MergeSort,0.000002,19,136
+Ordenado,HeapSort,0.000001,41,0
+Parcialmente Ordenado,QuickSort,0.000001,34,0
+Parcialmente Ordenado,MergeSort,0.000002,24,136
+Parcialmente Ordenado,HeapSort,0.000002,39,0
+Decrescente,QuickSort,0.000002,45,0
+Decrescente,MergeSort,0.000002,15,136
+Decrescente,HeapSort,0.000001,35,0

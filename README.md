@@ -1,10 +1,3 @@
-Claro! Aqui está um `README.md` completo para o seu projeto de ordenação em C, com instruções claras para compilação, execução, estrutura dos arquivos e análise dos resultados.
-
----
-
-```markdown
-# Projeto: Análise Experimental de Algoritmos de Ordenação \(O(n \log n)\)
-
 Este projeto realiza a comparação de desempenho dos algoritmos **QuickSort**, **MergeSort** e **HeapSort** aplicados a diferentes conjuntos de dados de entrada. São coletadas métricas de tempo de execução, número de comparações e uso estimado de memória dinâmica. Os resultados são salvos em um arquivo `resultados.csv`.
 
 ---
@@ -117,11 +110,3 @@ Cada arquivo da pasta `dados/` deve começar com um número inteiro que indica a
 * Rafael Ferreira Lima
 
 ---
-
-```
-
----
-
-Se desejar, posso incluir esse `README.md` já no projeto `.zip` atualizado com métricas e CSV. Quer que eu gere essa nova versão empacotada?
-```
-
