@@ -50,10 +50,10 @@ for algoritmo in algoritmos:
     plt.figure(figsize=(10, 6))
     subset = df[df['Algorithm'] == algoritmo]
     sns.lineplot(data=subset, x="Size", y="TimeSecondsMean", hue="DataType", marker="o")
-    plt.title(f"Tempo Médio - {algoritmo}")
+    # plt.title(f"Tempo Médio - {algoritmo}")
     plt.xlabel("Tamanho do Conjunto de Dados")
     plt.ylabel("Tempo (segundos)")
-    plt.legend(title="Tipo de Dados", bbox_to_anchor=(1.05, 1), loc='upper left')
+    plt.legend(title="Tipo de Dados", loc='upper left', bbox_to_anchor=(0, 1))
     plt.tight_layout()
     plt.savefig(f"{output_dir}/{algoritmo.lower()}_tempo_por_tipo_dado.png")
     plt.close()
@@ -75,10 +75,10 @@ for algoritmo in algoritmos:
         errorbar="sd"
     )
 
-    plt.title(f"Tempo Médio com Desvio Padrão - {algoritmo}")
+    # plt.title(f"Tempo Médio com Desvio Padrão - {algoritmo}")
     plt.xlabel("Tamanho do Conjunto de Dados")
     plt.ylabel("Tempo (segundos)")
-    plt.legend(title="Tipo de Dados", bbox_to_anchor=(1.05, 1), loc='upper left')
+    plt.legend(title="Tipo de Dados", loc='upper left', bbox_to_anchor=(0, 1))
     plt.tight_layout()
     plt.savefig(f"{output_dir}/{algoritmo.lower()}_tempo_com_std_por_tipo_dado.png")
     plt.close()    
@@ -102,10 +102,10 @@ for tipo in tipos_dados:
         errorbar="sd"
     )
 
-    plt.title(f"Tempo Médio por Algoritmo - Dados: {tipo}")
+    # plt.title(f"Tempo Médio por Algoritmo - Dados: {tipo}")
     plt.xlabel("Tamanho do Conjunto de Dados")
     plt.ylabel("Tempo (segundos)")
-    plt.legend(title="Algoritmo", bbox_to_anchor=(1.05, 1), loc='upper left')
+    plt.legend(title="Algoritmo", loc='upper left', bbox_to_anchor=(0, 1))
     plt.tight_layout()
     filename = tipo.lower().replace(" ", "_")
     plt.savefig(f"{output_dir}/tempo_comparativo_por_algoritmo_{filename}.png")
