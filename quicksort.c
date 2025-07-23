@@ -61,7 +61,9 @@ void swap(int *a, int *b) {
 }
 
 int partition(int arr[], int low, int high) {
-    int pivot = arr[high];
+    int mid = low + (high - low) / 2; //modificado para pegar o meio, conforme o professor indicou
+    int pivot = arr[mid];
+    swap(&arr[mid], &arr[high]);
     int i = low - 1;
 
     for (int j = low; j < high; j++) {

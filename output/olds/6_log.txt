@@ -1,0 +1,400 @@
+
+File: a100.txt (Type: Random, Size = 100)
+QuickSort:  0.000010 s
+MergeSort:  0.000024 s
+HeapSort:   0.000013 s
+
+File: a1000.txt (Type: Random, Size = 1000)
+QuickSort:  0.000087 s
+MergeSort:  0.000118 s
+HeapSort:   0.000125 s
+
+File: a10000.txt (Type: Random, Size = 10000)
+QuickSort:  0.001130 s
+MergeSort:  0.001517 s
+HeapSort:   0.001583 s
+
+File: a100000.txt (Type: Random, Size = 100000)
+QuickSort:  0.012159 s
+MergeSort:  0.016005 s
+HeapSort:   0.021201 s
+
+File: a1000000.txt (Type: Random, Size = 1000000)
+QuickSort:  0.289323 s
+MergeSort:  0.179846 s
+HeapSort:   0.260202 s
+
+File: a1250000.txt (Type: Random, Size = 1250000)
+QuickSort:  0.429338 s
+MergeSort:  0.228399 s
+HeapSort:   0.342176 s
+
+File: a15000.txt (Type: Random, Size = 15000)
+QuickSort:  0.001530 s
+MergeSort:  0.002085 s
+HeapSort:   0.002515 s
+
+File: a1500000.txt (Type: Random, Size = 1500000)
+QuickSort:  0.586982 s
+MergeSort:  0.278887 s
+HeapSort:   0.415251 s
+
+File: a200.txt (Type: Random, Size = 200)
+QuickSort:  0.000014 s
+MergeSort:  0.000022 s
+HeapSort:   0.000022 s
+
+File: a2000.txt (Type: Random, Size = 2000)
+QuickSort:  0.000167 s
+MergeSort:  0.000239 s
+HeapSort:   0.000264 s
+
+File: a200000.txt (Type: Random, Size = 200000)
+QuickSort:  0.027958 s
+MergeSort:  0.031571 s
+HeapSort:   0.044027 s
+
+File: a2000000.txt (Type: Random, Size = 2000000)
+QuickSort:  0.990561 s
+MergeSort:  0.366836 s
+HeapSort:   0.595358 s
+
+File: a30000.txt (Type: Random, Size = 30000)
+QuickSort:  0.003224 s
+MergeSort:  0.004553 s
+HeapSort:   0.006567 s
+
+File: a500.txt (Type: Random, Size = 500)
+QuickSort:  0.000037 s
+MergeSort:  0.000059 s
+HeapSort:   0.000057 s
+
+File: a5000.txt (Type: Random, Size = 5000)
+QuickSort:  0.000473 s
+MergeSort:  0.000654 s
+HeapSort:   0.000763 s
+
+File: a50000.txt (Type: Random, Size = 50000)
+QuickSort:  0.005633 s
+MergeSort:  0.007973 s
+HeapSort:   0.012109 s
+
+File: a500000.txt (Type: Random, Size = 500000)
+QuickSort:  0.097292 s
+MergeSort:  0.083537 s
+HeapSort:   0.127888 s
+
+File: a7500.txt (Type: Random, Size = 7500)
+QuickSort:  0.000725 s
+MergeSort:  0.000990 s
+HeapSort:   0.001171 s
+
+File: a75000.txt (Type: Random, Size = 75000)
+QuickSort:  0.008345 s
+MergeSort:  0.011711 s
+HeapSort:   0.015256 s
+
+File: a750000.txt (Type: Random, Size = 750000)
+QuickSort:  0.183442 s
+MergeSort:  0.125879 s
+HeapSort:   0.192305 s
+
+File: d100.txt (Type: Descending, Size = 100)
+QuickSort:  0.000018 s
+MergeSort:  0.000008 s
+HeapSort:   0.000008 s
+
+File: d1000.txt (Type: Descending, Size = 1000)
+QuickSort:  0.001517 s
+MergeSort:  0.000070 s
+HeapSort:   0.000099 s
+
+File: d10000.txt (Type: Descending, Size = 10000)
+QuickSort:  0.098673 s
+MergeSort:  0.000896 s
+HeapSort:   0.001241 s
+
+File: d100000.txt (Type: Descending, Size = 100000)
+QuickSort:  1.584067 s
+MergeSort:  0.009752 s
+HeapSort:   0.016037 s
+
+File: d1000000.txt (Type: Descending, Size = 1000000)
+QuickSort:  16.745238 s
+MergeSort:  0.107320 s
+HeapSort:   0.177810 s
+
+File: d1250000.txt (Type: Descending, Size = 1250000)
+QuickSort:  21.112471 s
+MergeSort:  0.137672 s
+HeapSort:   0.222483 s
+
+File: d15000.txt (Type: Descending, Size = 15000)
+QuickSort:  0.173333 s
+MergeSort:  0.001337 s
+HeapSort:   0.001935 s
+
+File: d1500000.txt (Type: Descending, Size = 1500000)
+QuickSort:  25.555957 s
+MergeSort:  0.166072 s
+HeapSort:   0.302211 s
+
+File: d200.txt (Type: Descending, Size = 200)
+QuickSort:  0.000063 s
+MergeSort:  0.000015 s
+HeapSort:   0.000017 s
+
+File: d2000.txt (Type: Descending, Size = 2000)
+QuickSort:  0.005857 s
+MergeSort:  0.000147 s
+HeapSort:   0.000228 s
+
+File: d200000.txt (Type: Descending, Size = 200000)
+QuickSort:  3.278242 s
+MergeSort:  0.020337 s
+HeapSort:   0.031799 s
+
+File: d2000000.txt (Type: Descending, Size = 2000000)
+QuickSort:  34.194660 s
+MergeSort:  0.225102 s
+HeapSort:   0.368712 s
+
+File: d30000.txt (Type: Descending, Size = 30000)
+QuickSort:  0.445126 s
+MergeSort:  0.002872 s
+HeapSort:   0.004176 s
+
+File: d500.txt (Type: Descending, Size = 500)
+QuickSort:  0.000369 s
+MergeSort:  0.000035 s
+HeapSort:   0.000046 s
+
+File: d5000.txt (Type: Descending, Size = 5000)
+QuickSort:  0.031739 s
+MergeSort:  0.000412 s
+HeapSort:   0.000579 s
+
+File: d50000.txt (Type: Descending, Size = 50000)
+QuickSort:  0.765280 s
+MergeSort:  0.004775 s
+HeapSort:   0.007121 s
+
+File: d500000.txt (Type: Descending, Size = 500000)
+QuickSort:  8.423790 s
+MergeSort:  0.051968 s
+HeapSort:   0.084336 s
+
+File: d7500.txt (Type: Descending, Size = 7500)
+QuickSort:  0.063088 s
+MergeSort:  0.000765 s
+HeapSort:   0.000905 s
+
+File: d75000.txt (Type: Descending, Size = 75000)
+QuickSort:  1.165795 s
+MergeSort:  0.007240 s
+HeapSort:   0.010971 s
+
+File: d750000.txt (Type: Descending, Size = 750000)
+QuickSort:  12.447587 s
+MergeSort:  0.113554 s
+HeapSort:   0.138914 s
+
+File: o100.txt (Type: Sorted, Size = 100)
+QuickSort:  0.000024 s
+MergeSort:  0.000008 s
+HeapSort:   0.000010 s
+
+File: o1000.txt (Type: Sorted, Size = 1000)
+QuickSort:  0.001884 s
+MergeSort:  0.000068 s
+HeapSort:   0.000105 s
+
+File: o10000.txt (Type: Sorted, Size = 10000)
+QuickSort:  0.113926 s
+MergeSort:  0.000929 s
+HeapSort:   0.001515 s
+
+File: o100000.txt (Type: Sorted, Size = 100000)
+QuickSort:  1.106147 s
+MergeSort:  0.009243 s
+HeapSort:   0.015500 s
+
+File: o1000000.txt (Type: Sorted, Size = 1000000)
+QuickSort:  11.400131 s
+MergeSort:  0.105948 s
+HeapSort:   0.166380 s
+
+File: o1250000.txt (Type: Sorted, Size = 1250000)
+QuickSort:  14.020139 s
+MergeSort:  0.157486 s
+HeapSort:   0.212472 s
+
+File: o15000.txt (Type: Sorted, Size = 15000)
+QuickSort:  0.152624 s
+MergeSort:  0.001224 s
+HeapSort:   0.002084 s
+
+File: o1500000.txt (Type: Sorted, Size = 1500000)
+QuickSort:  17.100462 s
+MergeSort:  0.191316 s
+HeapSort:   0.275671 s
+
+File: o200.txt (Type: Sorted, Size = 200)
+QuickSort:  0.000094 s
+MergeSort:  0.000015 s
+HeapSort:   0.000018 s
+
+File: o2000.txt (Type: Sorted, Size = 2000)
+QuickSort:  0.007207 s
+MergeSort:  0.000148 s
+HeapSort:   0.000236 s
+
+File: o200000.txt (Type: Sorted, Size = 200000)
+QuickSort:  2.188595 s
+MergeSort:  0.019583 s
+HeapSort:   0.031245 s
+
+File: o2000000.txt (Type: Sorted, Size = 2000000)
+QuickSort:  22.973135 s
+MergeSort:  0.221580 s
+HeapSort:   0.347072 s
+
+File: o30000.txt (Type: Sorted, Size = 30000)
+QuickSort:  0.348234 s
+MergeSort:  0.002629 s
+HeapSort:   0.004419 s
+
+File: o500.txt (Type: Sorted, Size = 500)
+QuickSort:  0.000494 s
+MergeSort:  0.000033 s
+HeapSort:   0.000048 s
+
+File: o5000.txt (Type: Sorted, Size = 5000)
+QuickSort:  0.033012 s
+MergeSort:  0.000398 s
+HeapSort:   0.000620 s
+
+File: o50000.txt (Type: Sorted, Size = 50000)
+QuickSort:  0.564315 s
+MergeSort:  0.004511 s
+HeapSort:   0.007560 s
+
+File: o500000.txt (Type: Sorted, Size = 500000)
+QuickSort:  5.541527 s
+MergeSort:  0.051169 s
+HeapSort:   0.080677 s
+
+File: o7500.txt (Type: Sorted, Size = 7500)
+QuickSort:  0.061114 s
+MergeSort:  0.000586 s
+HeapSort:   0.000981 s
+
+File: o75000.txt (Type: Sorted, Size = 75000)
+QuickSort:  0.853144 s
+MergeSort:  0.006891 s
+HeapSort:   0.011619 s
+
+File: o750000.txt (Type: Sorted, Size = 750000)
+QuickSort:  8.353534 s
+MergeSort:  0.078922 s
+HeapSort:   0.123732 s
+
+File: po100.txt (Type: Partially Ordered, Size = 100)
+QuickSort:  0.000007 s
+MergeSort:  0.000010 s
+HeapSort:   0.000022 s
+
+File: po1000.txt (Type: Partially Ordered, Size = 1000)
+QuickSort:  0.000232 s
+MergeSort:  0.000075 s
+HeapSort:   0.000106 s
+
+File: po10000.txt (Type: Partially Ordered, Size = 10000)
+QuickSort:  0.017316 s
+MergeSort:  0.000826 s
+HeapSort:   0.001339 s
+
+File: po100000.txt (Type: Partially Ordered, Size = 100000)
+QuickSort:  1.191666 s
+MergeSort:  0.009297 s
+HeapSort:   0.015630 s
+
+File: po1000000.txt (Type: Partially Ordered, Size = 1000000)
+QuickSort:  11.298473 s
+MergeSort:  0.106139 s
+HeapSort:   0.190870 s
+
+File: po1250000.txt (Type: Partially Ordered, Size = 1250000)
+QuickSort:  14.367157 s
+MergeSort:  0.135512 s
+HeapSort:   0.210846 s
+
+File: po15000.txt (Type: Partially Ordered, Size = 15000)
+QuickSort:  0.037803 s
+MergeSort:  0.001278 s
+HeapSort:   0.002075 s
+
+File: po1500000.txt (Type: Partially Ordered, Size = 1500000)
+QuickSort:  17.143552 s
+MergeSort:  0.164929 s
+HeapSort:   0.273688 s
+
+File: po200.txt (Type: Partially Ordered, Size = 200)
+QuickSort:  0.000013 s
+MergeSort:  0.000019 s
+HeapSort:   0.000021 s
+
+File: po2000.txt (Type: Partially Ordered, Size = 2000)
+QuickSort:  0.000881 s
+MergeSort:  0.000183 s
+HeapSort:   0.000243 s
+
+File: po200000.txt (Type: Partially Ordered, Size = 200000)
+QuickSort:  2.283668 s
+MergeSort:  0.019587 s
+HeapSort:   0.031684 s
+
+File: po2000000.txt (Type: Partially Ordered, Size = 2000000)
+QuickSort:  23.469622 s
+MergeSort:  0.220010 s
+HeapSort:   0.346072 s
+
+File: po30000.txt (Type: Partially Ordered, Size = 30000)
+QuickSort:  0.078351 s
+MergeSort:  0.002696 s
+HeapSort:   0.004411 s
+
+File: po500.txt (Type: Partially Ordered, Size = 500)
+QuickSort:  0.000060 s
+MergeSort:  0.000040 s
+HeapSort:   0.000063 s
+
+File: po5000.txt (Type: Partially Ordered, Size = 5000)
+QuickSort:  0.005344 s
+MergeSort:  0.000408 s
+HeapSort:   0.000632 s
+
+File: po50000.txt (Type: Partially Ordered, Size = 50000)
+QuickSort:  0.458089 s
+MergeSort:  0.004572 s
+HeapSort:   0.007567 s
+
+File: po500000.txt (Type: Partially Ordered, Size = 500000)
+QuickSort:  5.716433 s
+MergeSort:  0.051070 s
+HeapSort:   0.080553 s
+
+File: po7500.txt (Type: Partially Ordered, Size = 7500)
+QuickSort:  0.009211 s
+MergeSort:  0.000618 s
+HeapSort:   0.000980 s
+
+File: po75000.txt (Type: Partially Ordered, Size = 75000)
+QuickSort:  0.864555 s
+MergeSort:  0.006959 s
+HeapSort:   0.011604 s
+
+File: po750000.txt (Type: Partially Ordered, Size = 750000)
+QuickSort:  8.730920 s
+MergeSort:  0.079510 s
+HeapSort:   0.124431 s

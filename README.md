@@ -157,7 +157,7 @@ O programa determina automaticamente o tamanho do vetor com base no nome do arqu
 
 ### QuickSort
 
-O QuickSort é um algoritmo recursivo que utiliza a técnica de **divisão e conquista**. Em cada passo, escolhe um **pivô** (neste projeto, o último elemento) e particiona o vetor em duas partes: à esquerda, elementos menores; à direita, elementos maiores.
+O QuickSort é um algoritmo recursivo que utiliza a técnica de **divisão e conquista**. Em cada passo, escolhe um **pivô** (neste projeto, o meio) e particiona o vetor em duas partes: à esquerda, elementos menores; à direita, elementos maiores.
 
 * **Melhor caso**: O(n log n) → pivô sempre divide o vetor ao meio.
 * **Pior caso**: O(n²) → vetor já ordenado ou decrescente (pivô mal escolhido).
