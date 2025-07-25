@@ -42,6 +42,14 @@ df = pd.read_csv(output_path)
 output_dir = "graphs"
 os.makedirs(output_dir, exist_ok=True)
 
+traducao_tipos = {
+    "Random": "Aleatório",
+    "Descending": "Decrescente",
+    "Sorted": "Crescente",
+    "Partially Ordered": "Parcialmente Ordenado"
+}
+df['DataType'] = df['DataType'].map(traducao_tipos)
+
 # Lista dos algoritmos
 algoritmos = df['Algorithm'].unique()
 
