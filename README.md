@@ -10,6 +10,7 @@ Os resultados são exibidos no terminal e também exportados para o arquivo `res
 
 Os arquivos-fonte deste projeto foram feitos em `C` e contêm comentários extensos em português e inglês com o objetivo de documentar detalhadamente o funcionamento de cada algoritmo, suas métricas e complexidade. Esses blocos de comentários podem ser livremente removidos ou reduzidos caso deseje um código mais limpo ou enxuto para entrega ou execução prática.
 
+Os resultados da análise foram compilados em um arquivo PDF a partir do fonte em `LaTeX` e os fontes estão em disponíveis em `report/`
 ---
 
 ## Índice
@@ -52,6 +53,9 @@ sorting_project/
 ├── quicksort.h
 ├── utils.c                       # Funções auxiliares: leitura, tempo, métricas
 ├── utils.h
+├── analyses/                     # Scripts Python para análise estatística e visualização
+|   ├── group_files.py            # Script para agrupar arquivos CSV por rodada de teste
+|   └── group_and_graph.py        # Script para gerar métricas e gráficos automaticamente
 ├── backup_data/                  # Dados originais e completos para restaurar os testes
 ├── data/                         # Conjuntos de dados de entrada
 │   ├── a100.txt                  # 100 elementos aleatórios
@@ -59,6 +63,11 @@ sorting_project/
 │   ├── o100.txt                  # 100 elementos ordenados crescentes
 │   ├── po100.txt                 # 100 elementos parcialmente ordenados
 │   └── ...                       # Outros arquivos gerados para testes
+├── graphs/                       # Gráficos gerados com matplotlib/seaborn
+│   ├── quicksort_tempo_por_tipo_dado.png
+│   ├── mergesort_tempo_com_std_por_tipo_dado.png
+│   ├── tempo_comparativo_por_algoritmo_random.png
+│   └── ...                       # Outros gráficos para cada algoritmo e tipo de dados
 ├── output/                       # Resultados da execução (gerado automaticamente)
 │   ├── 1_results.csv             # Resultados da execução teste 1
 │   ├── 2_results.csv             # Resultados da execução teste 2
@@ -66,14 +75,9 @@ sorting_project/
 │   ├── combined_by_test.csv      # Resultados combinados de todos os testes
 │   ├── metrics_filtered_with_std.csv  # Métricas com média e desvio padrão
 │   └── log.txt                   # Resultado do console
-├── graphs/                       # Gráficos gerados com matplotlib/seaborn
-│   ├── quicksort_tempo_por_tipo_dado.png
-│   ├── mergesort_tempo_com_std_por_tipo_dado.png
-│   ├── tempo_comparativo_por_algoritmo_random.png
-│   └── ...                       # Outros gráficos para cada algoritmo e tipo de dados
-└── analyses/                     # Scripts Python para análise estatística e visualização
-    ├── group_files.py           # Script para agrupar arquivos CSV por rodada de teste
-    └── group_and_graph.py       # Script para gerar métricas e gráficos automaticamente
+└── report/                       # Resultado compilado em um artigo e fonte em Latex
+    ├── report.pdf                # Relatório técnico
+    ├── report.zip                # Fontes do relatório em Latex 
 ```
 
 ---
